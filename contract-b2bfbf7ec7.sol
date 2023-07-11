@@ -5,11 +5,25 @@ contract Coin {
     // The keyword "public" makes variables
     // accessible from other contracts
     address public minter;
+    /** complie result
+    function minter() external view returns (address) {
+        return minter;
+    }
+    */
+
     mapping(address => uint) public balances;
+    /** complie result 
+    function balances(address account) external view returns (unit) {
+        return balances[address];
+    }
+    */
 
     // Events allow clients to react to specific
     // contract changes you declare
     event Sent(address from, address to, uint amount);
+    /** 
+    ethereum clients such as web applications can listen this event
+    */
 
     // Constructor code is only run when the contract
     // is created
