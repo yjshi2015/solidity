@@ -1,6 +1,16 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.3;
 
+
+/*
+1、部署proxy和helper
+2、调用helper的testContract1函数，生成testContract1的字节码
+3、调用proxy的deploy方法，将步骤2的结果作为入参，得到proxy部署的testContract1合约地址
+4、调用testContractd的owner方法，发现owner是proxy的地址（因为是proxy部署的该合约）
+5、接下来修改testContract1的owner为“当前账户”的地址，而非proxy的合约地址
+6、调用proxy的execute方法，_target为第3步得到的address，_data为helper的getCallData出参（入参为当前账户的地址！）
+7、执行完毕后验证，发现testContract1的owner地址已修改
+*/
 contract TestContract1 {
 
     address public owner = msg.sender;
