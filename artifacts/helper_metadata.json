@@ -1,0 +1,102 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "getBytecode1",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_x",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_y",
+						"type": "uint256"
+					}
+				],
+				"name": "getBytecode2",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "getCalldata",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Proxy.sol": "helper"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Proxy.sol": {
+			"keccak256": "0x79d1acc45530e8cd38bdc3fb5b1107383b1af11fac6f15269105312d5dc947c5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a1d6a6c036da16c2895311047a8b8094f6193bc527c1677d209e15c301489c10",
+				"dweb:/ipfs/QmfR7SZPoCt86VmzqfJ4fz82jAEmfthTRjYahz52LzRfGh"
+			]
+		}
+	},
+	"version": 1
+}
