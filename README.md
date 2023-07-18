@@ -32,3 +32,7 @@ solidity learning
   > All these functions are low-level functions and should be used with care. Specifically, any unknown contract might be malicious and if you call it, you hand over control to that contract which could in turn call back into your contract, so be prepared for changes to your state variables when the call returns. The regular way to interact with other contracts is to call a function on a contract object (x.f()).
 - Function Types : `function sig(<parameter types>) {internal|external} [pure|view|payable] [returns (<return types>)]`
   - By default, function types are internal, so the internal keyword can be omitted
+  - external 函数，只能由外部账户调用，也不可以被本合约内部的函数调用
+  - pure 函数中只有局部变量，不会对链上的数据进行任何**读**或**写**操作
+  - view 函数跟pure类似，但是它可以读取 链上的值global value 和 状态值state value,
+  -
