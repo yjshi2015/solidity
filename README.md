@@ -38,5 +38,9 @@ solidity learning
   
 - 数据位置：
   - storage：状态变量，存储在链上（类似于数据库持久化）；函数中修改状态变量的值，也会修改链上的值；动态数组只能应用在“状态变量”中；
-  - memory：局部变量，和函数的生命周期相同；函数中修改了局部变量的值，并不能修改链上的值；内存中的数组必须是“定长”数组，不能是动态调整长度的；
+  - memory：局部变量，和函数的生命周期相同；函数中修改了局部变量的值，并不能修改链上的值；内存中的数组必须是“定长”数组，所谓的“定长”并不是必须先指定长度，而是长度确定后不允许改变，不能动态调整长度的；
   - calldata： 跟memory类似，但只能用于函数的入参；适用于不同合约之中函数的调用时传递值；
+
+- Arrays
+  - The type of an array of fixed size `k` and element type `T` is written as `T[k]`, and an array of dynamic size as `T[]`.
+  - For example, an array of 5 dynamic arrays of `uint` is written as `uint[][5]`. The notation is reversed compared to some other languages. In Solidity, `X[3]` is always an array containing three elements of type `X`, even if `X` is itself an array(即使X本身也是数组，这点非常重要！因为它不像其他语言将其视为多维数组). This is not the case in other languages such as C.

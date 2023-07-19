@@ -3,4 +3,6 @@ pragma solidity ^0.8.7;
 
 contract HelloWordl {
     string public myString = "hello world!";
+    bytes32 public myBytes;
+    uint256 public myInt;
 }
