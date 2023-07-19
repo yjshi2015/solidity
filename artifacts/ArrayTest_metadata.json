@@ -7,20 +7,7 @@
 		"abi": [
 			{
 				"inputs": [],
-				"name": "myBytes",
-				"outputs": [
-					{
-						"internalType": "bytes32",
-						"name": "",
-						"type": "bytes32"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "myInt",
+				"name": "getLen",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -33,12 +20,38 @@
 			},
 			{
 				"inputs": [],
-				"name": "myString",
+				"name": "testPush",
 				"outputs": [
 					{
-						"internalType": "string",
+						"internalType": "uint256",
 						"name": "",
-						"type": "string"
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testPush1",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "x",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -58,7 +71,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"HelloWorld.sol": "HelloWordl"
+			"contract-arrayTest.sol": "ArrayTest"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -72,12 +85,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"HelloWorld.sol": {
-			"keccak256": "0x14d2a924ee2e1eb106c08f06f03d6c435bd01af5f31174c9d502dbfdf6d796bf",
+		"contract-arrayTest.sol": {
+			"keccak256": "0x05a5082e28457bf071f10ab38b9c2bfa0e7774b3c18c94150425b2c349d99503",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://e8672c6319f312c84a7ff2f72513d970ed7a48052453b249037a5e76037308be",
-				"dweb:/ipfs/QmTevmx16USKCmVrGomh4A9SxtivfYm36QSiiJRdndEeVD"
+				"bzz-raw://7ffa321bac755efffa4425a890a98ae56abcff23908ddf4697156dc9ae8458ac",
+				"dweb:/ipfs/QmSfutngtrR8CzhQZusG5wNaqMHT5GawPEyUGJ8dU6WBVD"
 			]
 		}
 	},

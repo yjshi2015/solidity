@@ -1,26 +1,13 @@
 {
 	"compiler": {
-		"version": "0.8.18+commit.87f61d96"
+		"version": "0.8.21+commit.d9974bed"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
 			{
 				"inputs": [],
-				"name": "myBytes",
-				"outputs": [
-					{
-						"internalType": "bytes32",
-						"name": "",
-						"type": "bytes32"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "myInt",
+				"name": "getLen",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -33,12 +20,25 @@
 			},
 			{
 				"inputs": [],
-				"name": "myString",
+				"name": "test",
 				"outputs": [
 					{
-						"internalType": "string",
+						"internalType": "uint256",
 						"name": "",
-						"type": "string"
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "x",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
 					}
 				],
 				"stateMutability": "view",
@@ -58,9 +58,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"HelloWorld.sol": "HelloWordl"
+			"contract-danglingReferceOfBytes.sol": "C"
 		},
-		"evmVersion": "paris",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -72,12 +72,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"HelloWorld.sol": {
-			"keccak256": "0x14d2a924ee2e1eb106c08f06f03d6c435bd01af5f31174c9d502dbfdf6d796bf",
+		"contract-danglingReferceOfBytes.sol": {
+			"keccak256": "0x7c9d703158d4a3dd62c70dfec5f79be3fe8ae3507d38745c61c0f6f5742c34a0",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://e8672c6319f312c84a7ff2f72513d970ed7a48052453b249037a5e76037308be",
-				"dweb:/ipfs/QmTevmx16USKCmVrGomh4A9SxtivfYm36QSiiJRdndEeVD"
+				"bzz-raw://47e5d519f927fd9ab4b9ab367d0a5650e806ee41801589c27d7f5a07c3a19314",
+				"dweb:/ipfs/QmRZaMvxovecAwD2EKFFLy2YHPjwHYvoXGK4buXZKRiCaj"
 			]
 		}
 	},
