@@ -6,37 +6,40 @@
 	"output": {
 		"abi": [
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "execLog",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "data",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_x",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_y",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "payable",
-				"type": "constructor"
-			},
-			{
-				"inputs": [],
-				"name": "owner",
-				"outputs": [
-					{
-						"internalType": "address",
 						"name": "",
-						"type": "address"
+						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "value",
+				"name": "dataArray",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -49,7 +52,14 @@
 			},
 			{
 				"inputs": [],
-				"name": "x",
+				"name": "f",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "f2",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -62,7 +72,33 @@
 			},
 			{
 				"inputs": [],
-				"name": "y",
+				"name": "f3",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "f4",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "staticArray",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -87,7 +123,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Proxy.sol": "TestContract2"
+			"contract-delete.sol": "DeleteExample"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -101,12 +137,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Proxy.sol": {
-			"keccak256": "0x79d1acc45530e8cd38bdc3fb5b1107383b1af11fac6f15269105312d5dc947c5",
-			"license": "MIT",
+		"contract-delete.sol": {
+			"keccak256": "0x9f08e919a93215188172b2f78f07f7b85cb09d073cfe545a59a9cc68a774fd37",
+			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://a1d6a6c036da16c2895311047a8b8094f6193bc527c1677d209e15c301489c10",
-				"dweb:/ipfs/QmfR7SZPoCt86VmzqfJ4fz82jAEmfthTRjYahz52LzRfGh"
+				"bzz-raw://d0016bb0a6c6617da0853feccd6025f809e2dc42a454417a243ab0655282a37a",
+				"dweb:/ipfs/QmWRGFMApuqVYBHdrxuHfeia6jVLoKp1NmHUneM6jjWfr4"
 			]
 		}
 	},

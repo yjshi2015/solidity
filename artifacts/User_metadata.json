@@ -6,55 +6,36 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"inputs": [],
-				"name": "f",
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "k",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "v",
+						"type": "uint256"
+					}
+				],
+				"name": "insert",
 				"outputs": [
 					{
-						"internalType": "uint256[]",
-						"name": "",
-						"type": "uint256[]"
+						"internalType": "uint256",
+						"name": "size",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "s",
+				"inputs": [],
+				"name": "sum",
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "t",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
+						"name": "s",
 						"type": "uint256"
 					}
 				],
@@ -75,7 +56,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contract-danglingReferceOfArray.sol": "C"
+			"contract-iteratorMapping.sol": "User"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -89,12 +70,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contract-danglingReferceOfArray.sol": {
-			"keccak256": "0x79fc2c966488136eb421cb3a65a7ea2432b75b825cbf89223349c8cdab350428",
+		"contract-iteratorMapping.sol": {
+			"keccak256": "0x63581d5fbc3390b688b4c24f1bf3c28c3cd2ccbcf3f9b7ef16986ce757992c0a",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://f8e9df09f93ce416e84d910fca16e899aca672ca54e59557562cb5235a59cdca",
-				"dweb:/ipfs/QmZKtuYdtZtiikhepSJtLqUeUt5fzYWgq8uvxQbUaizLER"
+				"bzz-raw://a0a7b9a1cf232bdce93e8f1025aeca1341d23a1fae87f4cf024819c1699a4306",
+				"dweb:/ipfs/QmSzG25uJEF5TZ2Kixr7fEu724hH6mQVpjNr95zX835Mqd"
 			]
 		}
 	},
