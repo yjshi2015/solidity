@@ -44,6 +44,12 @@ solidity learning
 - Arrays
   - The type of an array of fixed size `k` and element type `T` is written as `T[k]`, and an array of dynamic size as `T[]`.
   - For example, an array of 5 dynamic arrays of `uint` is written as `uint[][5]`. The notation is reversed compared to some other languages. In Solidity, `X[3]` is always an array containing three elements of type `X`, even if `X` is itself an array(即使X本身也是数组，这点非常重要！因为它不像其他语言将其视为多维数组). This is not the case in other languages such as C.
-
+  - bytes
+    - As a general rule, use `bytes` for arbitrary-length raw byte data and string for arbitrary-length string (UTF-8) data. If you can limit the length to a certain number of bytes, always use one of the value types `bytes1` to `bytes32` because they are much cheaper.
+    -  bytes to string : `bytes myBytes; string myString = string(myBytes);`    
+  - string
+    - compare two strings by their keccak256-hash using `keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2))` and concatenate two strings using `string.concat(s1, s2)`
+    - string to bytes : `string myString; bytes myBytes = bytes(myString);`
+    
 - delete : It is important to note that `delete a` really behaves like an assignment to a, i.e. it stores a new object in a 
   > delete a assigns the initial value for the type to a. I.e. for integers it is equivalent to a = 0, but it can also be used on arrays, where it assigns a dynamic array of length zero or a static array of the same length with all elements set to their initial value. delete a[x] deletes the item at index x of the array and leaves all other elements and the length of the array untouched. This especially means that it leaves a gap in the array. If you plan to remove items, a mapping is probably a better choice.
