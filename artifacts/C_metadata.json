@@ -1,37 +1,61 @@
 {
 	"compiler": {
-		"version": "0.8.21+commit.d9974bed"
+		"version": "0.8.18+commit.87f61d96"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
 			{
 				"inputs": [],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
+				"name": "check",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "a",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "b",
+						"type": "uint256"
+					}
+				],
 				"name": "f",
 				"outputs": [
 					{
-						"internalType": "uint256[]",
+						"internalType": "uint256",
 						"name": "",
-						"type": "uint256[]"
+						"type": "uint256"
 					}
 				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "pure",
 				"type": "function"
 			},
 			{
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "a",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "b",
 						"type": "uint256"
 					}
 				],
-				"name": "s",
+				"name": "g",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -39,18 +63,25 @@
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
+				"stateMutability": "pure",
 				"type": "function"
 			},
 			{
-				"inputs": [
+				"inputs": [],
+				"name": "nagative",
+				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "int256",
 						"name": "",
-						"type": "uint256"
+						"type": "int256"
 					}
 				],
-				"name": "t",
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "noCheck",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -58,7 +89,7 @@
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
+				"stateMutability": "pure",
 				"type": "function"
 			}
 		],
@@ -75,9 +106,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contract-danglingReferceOfArray.sol": "C"
+			"contract-arithmeticUncheck.sol": "C"
 		},
-		"evmVersion": "shanghai",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -89,12 +120,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contract-danglingReferceOfArray.sol": {
-			"keccak256": "0x79fc2c966488136eb421cb3a65a7ea2432b75b825cbf89223349c8cdab350428",
+		"contract-arithmeticUncheck.sol": {
+			"keccak256": "0x88c792f99c7ebcf9cc9d73dc96df9fafca98dfe5fe0ca13460e0b950c81c0a2e",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://f8e9df09f93ce416e84d910fca16e899aca672ca54e59557562cb5235a59cdca",
-				"dweb:/ipfs/QmZKtuYdtZtiikhepSJtLqUeUt5fzYWgq8uvxQbUaizLER"
+				"bzz-raw://758db3961636a8591034a5e50604c6e6d64f7c9d9ce81f51ee254cb24d0bcd20",
+				"dweb:/ipfs/QmSTPLfXCjV43dioCCkFpqDRgZtLKdyaiAdWrtW9Wqo9Cy"
 			]
 		}
 	},

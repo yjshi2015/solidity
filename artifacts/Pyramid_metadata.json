@@ -9,37 +9,19 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "k",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "v",
+						"name": "l",
 						"type": "uint256"
 					}
 				],
-				"name": "insert",
+				"name": "pyramid",
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "size",
+						"name": "",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "sum",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "s",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
+				"stateMutability": "pure",
 				"type": "function"
 			}
 		],
@@ -56,7 +38,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contract-iteratorMapping.sol": "User"
+			"contract-functionAsParamter1.sol": "Pyramid"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -70,12 +52,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contract-iteratorMapping.sol": {
-			"keccak256": "0x63581d5fbc3390b688b4c24f1bf3c28c3cd2ccbcf3f9b7ef16986ce757992c0a",
+		"contract-functionAsParamter1.sol": {
+			"keccak256": "0xa0330557718018593d38bf2089cdddeae03e0681927e228fc8b82a42d2241191",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://a0a7b9a1cf232bdce93e8f1025aeca1341d23a1fae87f4cf024819c1699a4306",
-				"dweb:/ipfs/QmSzG25uJEF5TZ2Kixr7fEu724hH6mQVpjNr95zX835Mqd"
+				"bzz-raw://b22e835263a078cadbedc5e173ef6809dec78abda38743e147ebf501ddc2593d",
+				"dweb:/ipfs/QmZ2yWyPUosSNpgUMX7X9ySAaG3ddaREM78cvnk9nwrn17"
 			]
 		}
 	},

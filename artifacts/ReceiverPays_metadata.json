@@ -6,40 +6,38 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "payable",
+				"type": "constructor"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "k",
+						"name": "amount",
 						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "v",
+						"name": "nonce",
 						"type": "uint256"
-					}
-				],
-				"name": "insert",
-				"outputs": [
+					},
 					{
-						"internalType": "uint256",
-						"name": "size",
-						"type": "uint256"
+						"internalType": "bytes",
+						"name": "signature",
+						"type": "bytes"
 					}
 				],
+				"name": "claimPayment",
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "sum",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "s",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
+				"name": "shutdown",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -50,13 +48,17 @@
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {},
+			"methods": {
+				"shutdown()": {
+					"notice": "destroy the contract and reclaim the leftover funds."
+				}
+			},
 			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"contract-iteratorMapping.sol": "User"
+			"contract-receiverPays.sol": "ReceiverPays"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -70,12 +72,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contract-iteratorMapping.sol": {
-			"keccak256": "0x63581d5fbc3390b688b4c24f1bf3c28c3cd2ccbcf3f9b7ef16986ce757992c0a",
+		"contract-receiverPays.sol": {
+			"keccak256": "0x689a3b0557ea51796815b8b1408f80473ee29514d961a8902c0ab09bd5adbd7a",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://a0a7b9a1cf232bdce93e8f1025aeca1341d23a1fae87f4cf024819c1699a4306",
-				"dweb:/ipfs/QmSzG25uJEF5TZ2Kixr7fEu724hH6mQVpjNr95zX835Mqd"
+				"bzz-raw://e5783daa7e56e1e6c4413454558cfd6b08bd752ac5a1f85cdfe18bd26281079f",
+				"dweb:/ipfs/QmebcLJWKfXH8BA19T347e4PU9uQVhr55v3MUSPZXmjP1C"
 			]
 		}
 	},

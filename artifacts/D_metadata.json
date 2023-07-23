@@ -9,33 +9,20 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "k",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "v",
-						"type": "uint256"
-					}
-				],
-				"name": "insert",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "size",
+						"name": "a",
 						"type": "uint256"
 					}
 				],
 				"stateMutability": "nonpayable",
-				"type": "function"
+				"type": "constructor"
 			},
 			{
 				"inputs": [],
-				"name": "sum",
+				"name": "x",
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "s",
+						"name": "",
 						"type": "uint256"
 					}
 				],
@@ -56,7 +43,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contract-iteratorMapping.sol": "User"
+			"contract-createdSalted.sol": "D"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -70,12 +57,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contract-iteratorMapping.sol": {
-			"keccak256": "0x63581d5fbc3390b688b4c24f1bf3c28c3cd2ccbcf3f9b7ef16986ce757992c0a",
+		"contract-createdSalted.sol": {
+			"keccak256": "0x5d273266c5fa71e989c78cf9a592e6e5a661e32caba4f48982f354edc443eb4b",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://a0a7b9a1cf232bdce93e8f1025aeca1341d23a1fae87f4cf024819c1699a4306",
-				"dweb:/ipfs/QmSzG25uJEF5TZ2Kixr7fEu724hH6mQVpjNr95zX835Mqd"
+				"bzz-raw://1d1dfb8b307882710373c7b77539846ef870c124d58a261f03e0b2ae4fa3f923",
+				"dweb:/ipfs/QmbD3ivmjJ2cgXfFNsP5mKhecnQ4RqZZ2ebMEirY6bZw1C"
 			]
 		}
 	},

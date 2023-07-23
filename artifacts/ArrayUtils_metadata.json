@@ -13,13 +13,12 @@
 		"userdoc": {
 			"kind": "user",
 			"methods": {},
-			"notice": "A minimal library to do fixed point operations on UFixed256x18.",
 			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"contract-8bdf2cbb54.sol": "FixedMath"
+			"contract-functionAsParamter1.sol": "ArrayUtils"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -33,12 +32,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contract-8bdf2cbb54.sol": {
-			"keccak256": "0x09adcf6a6e51ebd3fc5df9cb3e345f5e7344a401ea94d3b50fc0cedbfc63ce7c",
+		"contract-functionAsParamter1.sol": {
+			"keccak256": "0xa0330557718018593d38bf2089cdddeae03e0681927e228fc8b82a42d2241191",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://a26048aa007d8614af1a4d1bc9122c9b8cec62dfb92ef1540e2ae67da866dac0",
-				"dweb:/ipfs/QmXKhujFQGfvvvtwwDTvdAkcREGYbaDTdWi3RAz8QC68Xq"
+				"bzz-raw://b22e835263a078cadbedc5e173ef6809dec78abda38743e147ebf501ddc2593d",
+				"dweb:/ipfs/QmZ2yWyPUosSNpgUMX7X9ySAaG3ddaREM78cvnk9nwrn17"
 			]
 		}
 	},
