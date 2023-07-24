@@ -58,5 +58,6 @@ solidity learning
   - solidity用错误回滚的方式处理异常，如果存在多级调用，则向上抛异常来回滚数据，除非用try/catch来捕获了异常。
   - 对于send/call/delegatecall/calldata这4种调用方式，返回结果的第一个值是调用“成功or失败”的标志。
   - 对于不存在函数的调用，通常情况下返回true，所以函数调用前有必要检查是否存在。
-  - require ：一般在函数的前置校验，可以返回错误信息；
-  - assert ：用于内部错误检。
+  - require ：error类错误，一般在函数的前置校验，可以返回错误信息；
+  - assert ：panic类错误，用于内部错误检，如：除数为0、数组下标越界、数值上溢或下溢……
+  - revert : 建议采用如下方式：`error Unauthorized(); revert Unauthorized();`
