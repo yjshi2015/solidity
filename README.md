@@ -62,3 +62,14 @@ solidity learning
   - require ：error类错误，一般在函数的前置校验，可以返回错误信息；
   - assert ：panic类错误，用于内部错误检，如：除数为0、数组下标越界、数值上溢或下溢……
   - revert : 建议采用如下方式：`error Unauthorized(); revert Unauthorized();`
+
+- 变量的可见性
+  - public
+  - internal : 只能合约内部及子合约访问
+  - private ：只能合约内部访问，自合约不可访问
+
+- 函数的可见性
+  - public ： 内外部都可访问
+  - external ： 只能外部访问，不可内部访问
+  - internal
+  - private
