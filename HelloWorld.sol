@@ -16,4 +16,12 @@ contract HelloWordl {
         }
         return output;
     }
+
+    //声明字节数组，并为其赋值
+    function testType() public returns (uint) {
+        myBytes = new bytes(0);
+        myBytes.push(0x12);
+        myBytes.push(0x34);
+        return myBytes.length;
+    }
 }
