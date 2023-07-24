@@ -50,6 +50,13 @@ solidity learning
   - string
     - compare two strings by their keccak256-hash using `keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2))` and concatenate two strings using `string.concat(s1, s2)`
     - string to bytes : `string myString; bytes myBytes = bytes(myString);`
-    
+
 - delete : It is important to note that `delete a` really behaves like an assignment to a, i.e. it stores a new object in a 
   > delete a assigns the initial value for the type to a. I.e. for integers it is equivalent to a = 0, but it can also be used on arrays, where it assigns a dynamic array of length zero or a static array of the same length with all elements set to their initial value. delete a[x] deletes the item at index x of the array and leaves all other elements and the length of the array untouched. This especially means that it leaves a gap in the array. If you plan to remove items, a mapping is probably a better choice.
+
+- 错误处理
+  - solidity用错误回滚的方式处理异常，如果存在多级调用，则向上抛异常来回滚数据，除非用try/catch来捕获了异常。
+  - 对于send/call/delegatecall/calldata这4种调用方式，返回结果的第一个值是调用“成功or失败”的标志。
+  - 对于不存在函数的调用，通常情况下返回true，所以函数调用前有必要检查是否存在。
+  - require ：一般在函数的前置校验，可以返回错误信息；
+  - assert ：用于内部错误检。
