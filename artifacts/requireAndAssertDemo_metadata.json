@@ -8,38 +8,32 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "input",
-						"type": "string"
+						"internalType": "uint256",
+						"name": "arg",
+						"type": "uint256"
 					}
 				],
-				"name": "convertToBytes32",
-				"outputs": [
+				"name": "fun1",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
 					{
-						"internalType": "bytes32",
-						"name": "",
-						"type": "bytes32"
+						"internalType": "uint256",
+						"name": "arg",
+						"type": "uint256"
 					}
 				],
-				"stateMutability": "pure",
+				"name": "fun2",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "myString",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "testType",
+				"name": "localVar",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -47,7 +41,7 @@
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -64,7 +58,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"HelloWorld.sol": "HelloWordl"
+			"contract-requireAndAssert.sol": "requireAndAssertDemo"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -78,12 +72,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"HelloWorld.sol": {
-			"keccak256": "0xb0f63935597beafc785d3355dd8075c883bb9d7920b9c3b5bcdb7bb3567e21da",
-			"license": "GPL-3.0",
+		"contract-requireAndAssert.sol": {
+			"keccak256": "0x07ca4d976220dcc9614669c92ed069fb68a15adfd6a3fbfe2915660482a8fb71",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://2212d227a3ab56604890ca7e26f8212f196587e6f576bb2645a45079c84ace68",
-				"dweb:/ipfs/QmXRkTuARNKgXMcTryxv3CHzQN4rJqjB3ftaKJJcQCkQtU"
+				"bzz-raw://1f1e9688d280fdc17f6d12e8ae092a7af377f937815c3b09ac7bab175a426ef3",
+				"dweb:/ipfs/QmPUc93VY2MQGtF5ohzPbDaUqWzDJE2nso4BKhpUin2exg"
 			]
 		}
 	},

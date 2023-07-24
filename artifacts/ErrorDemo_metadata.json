@@ -7,21 +7,28 @@
 		"abi": [
 			{
 				"inputs": [],
-				"name": "bytesFun",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
+				"name": "MyError",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "caller",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "i",
+						"type": "uint256"
+					}
+				],
+				"name": "MyError2",
+				"type": "error"
 			},
 			{
 				"inputs": [],
-				"name": "bytesFun2",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getLen",
+				"name": "num",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -34,14 +41,8 @@
 			},
 			{
 				"inputs": [],
-				"name": "myBytes",
-				"outputs": [
-					{
-						"internalType": "bytes",
-						"name": "",
-						"type": "bytes"
-					}
-				],
+				"name": "testAssert",
+				"outputs": [],
 				"stateMutability": "view",
 				"type": "function"
 			},
@@ -49,58 +50,52 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "_i",
 						"type": "uint256"
 					}
 				],
-				"name": "myBytesArray",
-				"outputs": [
-					{
-						"internalType": "bytes32",
-						"name": "",
-						"type": "bytes32"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "testPush",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "testPush1",
+				"name": "testCustomError",
 				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "pure",
 				"type": "function"
 			},
 			{
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "_i",
 						"type": "uint256"
 					}
 				],
-				"name": "x",
-				"outputs": [
+				"name": "testCustomError2",
+				"outputs": [],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "_i",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
+				"name": "testRequire",
+				"outputs": [],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_i",
+						"type": "uint256"
+					}
+				],
+				"name": "testRevert",
+				"outputs": [],
+				"stateMutability": "pure",
 				"type": "function"
 			}
 		],
@@ -117,7 +112,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contract-arrayTest.sol": "ArrayTest"
+			"contract-error.sol": "ErrorDemo"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -131,12 +126,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contract-arrayTest.sol": {
-			"keccak256": "0x920d45eeb9d1c71d515a85b52a47f26273cd7e0665c59cc965e22ae349b177e9",
-			"license": "GPL-3.0",
+		"contract-error.sol": {
+			"keccak256": "0x370b5a3f4458b5ab52d87a656c83020df7c7609d3ab35d6d47e5d19b2967b0f2",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://bf50136e28b88fff2ce2a5b9c39907ffd73cdc4d47d475b52a0dbc3c6273c11a",
-				"dweb:/ipfs/QmT4cWawDt1ngKmTt7rr3p4hkhkuAU19fmLPo7AFTKjomH"
+				"bzz-raw://d2fec6774268b3f82126ba3db8e8266ae3b9c07d6f54470055e904e2a24bc807",
+				"dweb:/ipfs/QmR9wU56Ppc2kYbbWWxfsgfAwPvMFbWs4LQMfmdiLw9xbp"
 			]
 		}
 	},

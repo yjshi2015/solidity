@@ -6,32 +6,36 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "Unauthorized",
+				"type": "error"
+			},
+			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "input",
-						"type": "string"
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
 					}
 				],
-				"name": "convertToBytes32",
-				"outputs": [
-					{
-						"internalType": "bytes32",
-						"name": "",
-						"type": "bytes32"
-					}
-				],
-				"stateMutability": "pure",
+				"name": "buy",
+				"outputs": [],
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "myString",
+				"name": "owner",
 				"outputs": [
 					{
-						"internalType": "string",
+						"internalType": "address",
 						"name": "",
-						"type": "string"
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -39,14 +43,8 @@
 			},
 			{
 				"inputs": [],
-				"name": "testType",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
+				"name": "withdraw",
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
@@ -64,7 +62,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"HelloWorld.sol": "HelloWordl"
+			"contract-revert.sol": "VendingMachine"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -78,12 +76,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"HelloWorld.sol": {
-			"keccak256": "0xb0f63935597beafc785d3355dd8075c883bb9d7920b9c3b5bcdb7bb3567e21da",
+		"contract-revert.sol": {
+			"keccak256": "0x993fe8bf49534913891ee9d4808107d7fb532a31290a9733692f73c736c22e73",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://2212d227a3ab56604890ca7e26f8212f196587e6f576bb2645a45079c84ace68",
-				"dweb:/ipfs/QmXRkTuARNKgXMcTryxv3CHzQN4rJqjB3ftaKJJcQCkQtU"
+				"bzz-raw://18359e48e69f4a1a97d312a82f1af59873b54a87e85f6337fc8e06c49dae1513",
+				"dweb:/ipfs/QmU7DdXZgPhR54Sszx1gPvnDVUAucWJBsgsiZhQXaQ2FVY"
 			]
 		}
 	},

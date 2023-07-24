@@ -6,28 +6,21 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
 				"name": "getData",
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "value",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "a",
-						"type": "uint256"
-					}
-				],
-				"name": "setData",
-				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
@@ -45,7 +38,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contract-derivedFun.sol": "C"
+			"contract-tryCatch.sol": "DataFeed"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -59,12 +52,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contract-derivedFun.sol": {
-			"keccak256": "0x4100c54b40d5aee4997dec4319ad78466d8691cea7d8bdf27e77cb55b9bfaefe",
+		"contract-tryCatch.sol": {
+			"keccak256": "0x77506888c14b61af8ae4a1a4152c85d8bbf792eb2fbf0ca215659dbba00230d5",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://839fc705446b1d8dcde64350831424c924586ece62ef5e231489969d8f219cc7",
-				"dweb:/ipfs/QmQo8e69pk7Y1vq9AZRjFoRqbvEidD5NrDVeQbtWdq7iPS"
+				"bzz-raw://ac1c943f746d7a73e76a241d89184f7a0681fee3e30ac84c7e14cc0860ef62f8",
+				"dweb:/ipfs/QmcLfpgr4QMg6hEjRu1BaZLjESo4X5aWPisdDNsN7U1thn"
 			]
 		}
 	},

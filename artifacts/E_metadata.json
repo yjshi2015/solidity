@@ -6,40 +6,8 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "input",
-						"type": "string"
-					}
-				],
-				"name": "convertToBytes32",
-				"outputs": [
-					{
-						"internalType": "bytes32",
-						"name": "",
-						"type": "bytes32"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
 				"inputs": [],
-				"name": "myString",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "testType",
+				"name": "g",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -47,6 +15,32 @@
 						"type": "uint256"
 					}
 				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getData",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "a",
+						"type": "uint256"
+					}
+				],
+				"name": "setData",
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
@@ -64,7 +58,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"HelloWorld.sol": "HelloWordl"
+			"contract-derivedFun.sol": "E"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -78,12 +72,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"HelloWorld.sol": {
-			"keccak256": "0xb0f63935597beafc785d3355dd8075c883bb9d7920b9c3b5bcdb7bb3567e21da",
+		"contract-derivedFun.sol": {
+			"keccak256": "0x4100c54b40d5aee4997dec4319ad78466d8691cea7d8bdf27e77cb55b9bfaefe",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://2212d227a3ab56604890ca7e26f8212f196587e6f576bb2645a45079c84ace68",
-				"dweb:/ipfs/QmXRkTuARNKgXMcTryxv3CHzQN4rJqjB3ftaKJJcQCkQtU"
+				"bzz-raw://839fc705446b1d8dcde64350831424c924586ece62ef5e231489969d8f219cc7",
+				"dweb:/ipfs/QmQo8e69pk7Y1vq9AZRjFoRqbvEidD5NrDVeQbtWdq7iPS"
 			]
 		}
 	},

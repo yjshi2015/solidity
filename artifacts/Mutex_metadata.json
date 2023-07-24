@@ -7,7 +7,7 @@
 		"abi": [
 			{
 				"inputs": [],
-				"name": "getData",
+				"name": "f",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -15,19 +15,6 @@
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "a",
-						"type": "uint256"
-					}
-				],
-				"name": "setData",
-				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
@@ -39,13 +26,17 @@
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {},
+			"methods": {
+				"f()": {
+					"notice": "This function is protected by a mutex, which means that reentrant calls from within `msg.sender.call` cannot call `f` again. The `return 7` statement assigns 7 to the return value but still executes the statement `locked = false` in the modifier."
+				}
+			},
 			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"contract-derivedFun.sol": "C"
+			"contract-modifier.sol": "Mutex"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -59,12 +50,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contract-derivedFun.sol": {
-			"keccak256": "0x4100c54b40d5aee4997dec4319ad78466d8691cea7d8bdf27e77cb55b9bfaefe",
+		"contract-modifier.sol": {
+			"keccak256": "0x4e53ed15b49f3a3bfbb507c27a43b16a840f644ef9ecd42172eb4691c9f04d59",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://839fc705446b1d8dcde64350831424c924586ece62ef5e231489969d8f219cc7",
-				"dweb:/ipfs/QmQo8e69pk7Y1vq9AZRjFoRqbvEidD5NrDVeQbtWdq7iPS"
+				"bzz-raw://fc02bda0bbaedfad63fc082c0b59aafdbb50cc6253eb0ddd106f4b0bdd12b84f",
+				"dweb:/ipfs/QmURdiF92QaVogU1LrYmm9ZCbbmtbxt2nVgEsLoXzscZLL"
 			]
 		}
 	},
