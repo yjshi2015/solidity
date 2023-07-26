@@ -106,3 +106,25 @@ solidity learning
 - 不可变的变量
   - constant: 用于声明编译时常量；it has to be assigned where the variable is declared；在0.6.0版本之后废弃，推荐使用immutable
   - immutable: 编译时被硬编码写入到字节码中，并且在运行中不可更改。
+
+- 接收以太币的函数
+  - fallback函数：在0.6.0版本之前为默认的接收以太币的函数，之后细化为receive函数用于接收以太币，fallback则用来处理调用合约中不存在的函数的情况。一个合约
+  最多有1个fallback函数。
+  - receive函数：用来处理接收以太币的具体你逻辑。
+  - 自定义的payable函数：也可以用来向该合约转账。但是！建议使用receive函数实现接收以太币的功能，这是约定的、标准化的操作！
+  > Note : ①合约中定义了fallback或（和）receive函数，函数体的内容不需要“显式的声明接收以太币操作”，就可以实现接收以太币的操作，这是由EVM来处理的。②合约A
+  中定义了payable修饰的fallback或（和）receive函数，合约B中调用了send或transfer函数向合约A转发以太币，那么EVM会自动触发合约A的receive函数（如果存在的
+  话）或fallback函数。也就是说不可以通过直接调用fallback函数或receive函数来实现转账（这2个函数没有入参出参，肯定无法直接转），而是要交给EVM来处理！
+
+- ABI（Application Binary Interface）：是一种定义合约与其他合约或外部应用程序之间通信规范的标准。
+  ABI 描述了合约的函数、事件和数据结构的布局和编码方式，以便不同的合约或应用程序可以相互交互。
+  ABI 定义了合约的接口，包括函数的名称、参数类型和返回类型。
+  它还定义了函数的编码和解码规则，以便在不同的环境中正确地序列化和反序列化函数调用。
+  > 个人理解：ABI类似于DUBBO一样的RPC协议，以便不同的服务（合约）之间相互调用
+
+- Function selector ：函数选择器是一个用来标识函数的唯一标识符，它由函数签名的前4个字节（被称为函数选择器编码 Function Selector Encoding）构成。
+  作用：是在合约的函数调用时，帮助EVM识别要调用的函数。
+  如何防止hash冲突：使用函数签名hash值的前4个字节作为唯一标识，由于hash函数通常被设计为具有较低的碰撞概率，所以即使是前4个字节，也可以提供足够的唯一性。
+  在实践中，唯一性是由solidity编译器和EVM共同保证的，由于Function selector是在编译时就确定的，solidity编译器将function selector和对应的函数实现关联
+  起来。这时如果发生了hash冲突，编译器就会引发编译错误，提示开发者更改函数名称或参数以确保唯一性。在合约调用的时候，EVM根据function selector来确定要执
+  行的函数。
