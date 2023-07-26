@@ -24,4 +24,22 @@ contract HelloWordl {
         myBytes.push(0x34);
         return myBytes.length;
     }
+
+    /*
+    // mapping不能作为返回值
+    function testReturn() public returns (mapping(uint => bool) memory) {
+       // to do something 
+    }
+    */
+
+    struct Student {
+        uint index;
+        string name;
+    }
+
+    //结构体可以作为出参
+    function testReturn() public pure returns (Student memory) {
+        Student memory student = Student({index: 1, name: "zhangsan"});
+        return student;
+    }
 }
