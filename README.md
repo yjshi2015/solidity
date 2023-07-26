@@ -89,6 +89,13 @@ solidity learning
   - external ： 只能外部访问，不可内部访问
   - internal
   - private
+- 外部函数：也称为自由函数，可见度为internal
+- 函数返回值：不能为以下类型
+  - mappings
+  - internal function types
+  - reference types with location set to storage
+  - multi-dimensional arrays (applies only to ABI coder v1)
+  - structs (applies only to ABI coder v1). 亲测是可以的，见 @see helloworld.sol
 
 - payable修饰符
   - 修饰address变量，表明该地址可以接收以太币，而不是发送。
