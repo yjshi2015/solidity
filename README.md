@@ -2,7 +2,29 @@
 solidity learning
 
 ## types
-- The concept of “undefined” or “null” values does not exist in Solidity, but newly declared variables always have a default value dependent on its type
+- The concept of “undefined” or “null” values does not exist in Solidity, but newly declared variables always have a default value dependent
+  on its type
+
+- Arrays
+  - The type of an array of fixed size `k` and element type `T` is written as `T[k]`, and an array of dynamic size as `T[]`.
+  - For example, an array of 5 dynamic arrays of `uint` is written as `uint[][5]`. The notation is reversed compared to some other languages. 
+  In Solidity, `X[3]` is always an array containing three elements of type `X`, even if `X` is itself an array(即使X本身也是数组，这点非常重要！
+  因为它不像其他语言将其视为多维数组). This is not the case in other languages such as C.
+  - bytes
+    - As a general rule, use `bytes` for arbitrary-length raw byte data and string for arbitrary-length string (UTF-8) data. If you can limit 
+    the length to a certain number of bytes, always use one of the value types `bytes1` to `bytes32` because they are much cheaper.
+    -  bytes to string : `bytes myBytes; string myString = string(myBytes);`    
+  - string
+    - compare two strings by their keccak256-hash using `keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2))` and concatenate 
+    two strings using `string.concat(s1, s2)`
+    - string to bytes : `string myString; bytes myBytes = bytes(myString);`
+
+  - delete : It is important to note that `delete a` really behaves like an assignment to a, i.e. it stores a new object in a 
+    > `delete a` assigns the initial value for the type to `a`. I.e. for integers it is equivalent to `a = 0`, but it can also be used on arrays, 
+    where it assigns `a` dynamic array of length zero or a static array of the same length with all elements set to their initial value. `delete 
+    a[x]` deletes the item at index x of the array and leaves all other elements and the length of the array untouched. This especially means 
+    that it leaves a gap in the array. If you plan to remove items, a mapping is probably a better choice.
+
 - The operators `||` and `&&` apply the common short-circuiting rules
 - `uint` and `int` are aliases for `uint256` and `int256`, respectively
 - `x << y` is equivalent to the mathematical expression `x * 2**y`.
@@ -21,6 +43,7 @@ solidity learning
   ```solidity
     address payable x = payable(0x123);
     address myAddress = address(this);
+    //向x账户发送10个wei的以太币，同时扣减该函数所在合约的账户余额，而非Remix账户余额！！！
     if (x.balance < 10 && myAddress.balance >= 10) x.transfer(10);
   ```
   - send : if fails, current contract will not stop with exception, but will return `false`
@@ -37,12 +60,6 @@ solidity learning
   > All these functions are low-level functions and should be used with care. Specifically, any unknown contract might be malicious and if you 
   call it, you hand over control to that contract which could in turn call back into your contract, so be prepared for changes to your state 
   variables when the call returns. The regular way to interact with other contracts is to call a function on a contract object (x.f()).
-
-- Function Types : `function sig(<parameter types>) {public|internal|external} [pure|view|payable] [returns (<return types>)]`
-  - By default, function types are internal, so the internal keyword can be omitted
-  - external 函数，只能由外部账户调用，也不可以被本合约内部的函数调用
-  - pure 函数中只有局部变量，不会对链上的数据进行任何**读**或**写**操作
-  - view 函数跟pure类似，但是它可以读取 链上的值global value 和 状态值state value,
   
 - 数据位置：
   - storage：状态变量，存储在链上（类似于数据库持久化）；函数中修改状态变量的值，也会修改链上的值；动态数组只能应用在“状态变量”中；
@@ -51,25 +68,6 @@ solidity learning
   - calldata： 跟memory类似，但只能用于函数的入参；适用于不同合约之中函数的调用时传递值；
   - 全局变量： 链上的那些不用定义可以直接使用的变量，如msg.sender/msg.value/block.timestamp/block.number
 
-- Arrays
-  - The type of an array of fixed size `k` and element type `T` is written as `T[k]`, and an array of dynamic size as `T[]`.
-  - For example, an array of 5 dynamic arrays of `uint` is written as `uint[][5]`. The notation is reversed compared to some other languages. 
-  In Solidity, `X[3]` is always an array containing three elements of type `X`, even if `X` is itself an array(即使X本身也是数组，这点非常重要！
-  因为它不像其他语言将其视为多维数组). This is not the case in other languages such as C.
-  - bytes
-    - As a general rule, use `bytes` for arbitrary-length raw byte data and string for arbitrary-length string (UTF-8) data. If you can limit 
-    the length to a certain number of bytes, always use one of the value types `bytes1` to `bytes32` because they are much cheaper.
-    -  bytes to string : `bytes myBytes; string myString = string(myBytes);`    
-  - string
-    - compare two strings by their keccak256-hash using `keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2))` and concatenate 
-    two strings using `string.concat(s1, s2)`
-    - string to bytes : `string myString; bytes myBytes = bytes(myString);`
-
-- delete : It is important to note that `delete a` really behaves like an assignment to a, i.e. it stores a new object in a 
-  > `delete a` assigns the initial value for the type to `a`. I.e. for integers it is equivalent to `a = 0`, but it can also be used on arrays, 
-  where it assigns `a` dynamic array of length zero or a static array of the same length with all elements set to their initial value. `delete 
-  a[x]` deletes the item at index x of the array and leaves all other elements and the length of the array untouched. This especially means 
-  that it leaves a gap in the array. If you plan to remove items, a mapping is probably a better choice.
 
 - 错误处理
   - solidity用错误回滚的方式处理异常，如果存在多级调用，则向上抛异常来回滚数据，除非用try/catch来捕获了异常。
@@ -84,12 +82,20 @@ solidity learning
   - internal : 只能合约内部及子合约访问
   - private ：只能合约内部访问，自合约不可访问
 
+- Function Types : `function sig(<parameter types>) {public|internal|external} [pure|view|payable] [returns (<return types>)]`
+  - By default, function types are internal, so the internal keyword can be omitted
+  - external 函数，只能由外部账户调用，也不可以被本合约内部的函数调用
+  - pure 函数中只有局部变量，不会对链上的数据进行任何**读**或**写**操作
+  - view 函数跟pure类似，但是它可以读取 链上的值global value 和 状态值state value,
+
 - 函数的可见性
   - public ： 内外部都可访问
   - external ： 只能外部访问，不可内部访问
   - internal
   - private
+
 - 外部函数：也称为自由函数，可见度为internal
+
 - 函数返回值：不能为以下类型
   - mappings
   - internal function types
@@ -115,6 +121,10 @@ solidity learning
   > Note : ①合约中定义了fallback或（和）receive函数，函数体的内容不需要“显式的声明接收以太币操作”，就可以实现接收以太币的操作，这是由EVM来处理的。②合约A
   中定义了payable修饰的fallback或（和）receive函数，合约B中调用了send或transfer函数向合约A转发以太币，那么EVM会自动触发合约A的receive函数（如果存在的
   话）或fallback函数。也就是说不可以通过直接调用fallback函数或receive函数来实现转账（这2个函数没有入参出参，肯定无法直接转），而是要交给EVM来处理！
+  - 如何把Remix账户中的以太币转移给合约A ？ 需要在合约A中定义deposit函数，然后在Remix界面指定转移的以太币数量，执行deposit函数即可。
+  - 合约A中定义了transfer或send函数，用于向指定合约X转账，函数调用在Remix界面中直接发起，请问转账能否成功，扣减的金额是在谁身上，Remix账户还是合约A ？ 先
+  说结论：*哪个合约内部执行了transfer或send函数，就从哪个合约上扣减以太币*，所以并不是扣减Remix账户的余额，而是合约A的余额，由于合约A此时并没有以太币（按
+  照上一步可以给合约A转发以太币），所以函数调用失败！
 
 - ABI（Application Binary Interface）：是一种定义合约与其他合约或外部应用程序之间通信规范的标准。
   ABI 描述了合约的函数、事件和数据结构的布局和编码方式，以便不同的合约或应用程序可以相互交互。
@@ -128,3 +138,7 @@ solidity learning
   在实践中，唯一性是由solidity编译器和EVM共同保证的，由于Function selector是在编译时就确定的，solidity编译器将function selector和对应的函数实现关联
   起来。这时如果发生了hash冲突，编译器就会引发编译错误，提示开发者更改函数名称或参数以确保唯一性。在合约调用的时候，EVM根据function selector来确定要执
   行的函数。
+
+- gas费：在进行deposit操作时，控制台显示的有transaction cost和execution cost，但在实际过程中，并没有扣除execution cost的费用，why？
+
+- 什么是地代码
