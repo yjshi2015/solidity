@@ -1,6 +1,19 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.7;
 
+//合约的继承
+contract Parent {
+    function f(uint a) public pure virtual returns (uint val) {
+        val = a;
+    }
+}
+
+contract Child is Parent{
+    function f(uint a) public pure virtual override returns (uint val) {
+        val = a + 1;
+    }
+}
+
 contract HelloWordl {
     string public myString = "hello world!";
     //只能在当前合约及子合约中访问

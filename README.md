@@ -141,4 +141,103 @@ solidity learning
 
 - gas费：在进行deposit操作时，控制台显示的有transaction cost和execution cost，但在实际过程中，并没有扣除execution cost的费用，why？
 
+- selfdestruct : 是一个特殊的函数，用于销毁当前合约的实例并将其余额发送到指定的地址。这个地址可以是任何有效的以太坊地址，包括外部账户或其他合约地址。
+  selfdestruct 函数的使用通常是为了合约的清理和资源回收（只是销毁当前的实例，其他实例不受影响）。
+  > Note : 一个合约可以new多个实例，每个实例有独立的地址和余额，相互之间不受影响。
+  ```
+  pragma solidity ^0.8.0;
+
+  contract MyContract {
+      address payable public beneficiary;
+
+      constructor(address payable _beneficiary) {
+          beneficiary = _beneficiary;
+      }
+
+      //将当前合约实例的余额转移到地址beneficiary，并销毁当前实例
+      function destroy() public {
+          selfdestruct(beneficiary);
+      }
+  }
+
+  ```
+
+- inherit 
+  - virtual : 该修饰符用于声明一个函数为虚函数。虚函数是一种可以在子合约中被重写的函数。当一个函数被声明为虚函数时，它可以在子合约中使用 override 关键字
+  进行重写。这允许子合约对父合约中的虚函数进行自定义实现。
+  ```
+  pragma solidity ^0.8.0;
+
+  contract ParentContract {
+      function foo() public virtual returns (string memory) {
+          return "Parent";
+      }
+  }
+
+  contract ChildContract is ParentContract {
+      function foo() public virtual override returns (string memory) {
+          return "Child";
+      }
+  }
+
+  ```
+
+  - abstract contract：抽象合约（类似于Java中的抽象类），用于定义一个抽象的合约模板，其中包含了一些未实现的函数或功能，需要子合约来实现。可以包含state 
+  variable和非抽象函数；不可以实例化，只能被继承和扩展，子合约必须实现全部抽象函数，否则子合约也是抽象合约；
+  ```
+  pragma solidity ^0.8.0;
+
+  abstract contract MyAbstractContract {
+      function myAbstractFunction() public virtual returns (uint);
+  }
+
+  contract MyContract is MyAbstractContract {
+      function myAbstractFunction() public override returns (uint) {
+          // 实现抽象函数的具体逻辑
+          return 42;
+      }
+  }
+  ```
+
+  - interface：抽象接口（类似于Java中的接口），所有的函数只有函数签名，没有具体的实现；
+  ```
+  pragma solidity ^0.8.0;
+
+  interface MyInterface {
+      function myFunction(uint256 param) external returns (uint256);
+  }
+
+  contract MyContract is MyInterface {
+      function myFunction(uint256 param) public override returns (uint256) {
+          // 实现接口函数的具体逻辑
+          return param * 2;
+      }
+  }
+  ```
+
+  - abstract contract 和 interface是相似的概念，用于定义一个合约的抽象接口，而并不包含实现，两者混搭的例子如下
+  ```
+  pragma solidity ^0.8.0;
+
+  abstract contract MyAbstractContract {
+      function myAbstractFunction() public virtual returns (uint);
+  }
+
+  interface MyInterface {
+      function myInterfaceFunction() external returns (string memory);
+  }
+
+  contract MyContract is MyAbstractContract, MyInterface {
+      function myAbstractFunction() public override returns (uint) {
+          // 实现抽象函数的具体逻辑
+          return 42;
+      }
+
+      function myInterfaceFunction() external override returns (string memory) {
+          // 实现接口函数的具体逻辑
+          return "Hello";
+      }
+  }
+  ```
+
 - 什么是地代码
