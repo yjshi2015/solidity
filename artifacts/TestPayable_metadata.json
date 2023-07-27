@@ -6,39 +6,38 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "decimals_",
-						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "ref",
-						"type": "address"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
+				"stateMutability": "payable",
+				"type": "fallback"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "other",
-						"type": "address"
-					}
-				],
-				"name": "isBalanceTooHigh",
+				"inputs": [],
+				"name": "x",
 				"outputs": [
 					{
-						"internalType": "bool",
+						"internalType": "uint256",
 						"name": "",
-						"type": "bool"
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "y",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -54,7 +53,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contract-constantImmutable.sol": "C"
+			"contract-fallbackAndReceive.sol": "TestPayable"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -68,12 +67,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contract-constantImmutable.sol": {
-			"keccak256": "0x969e7e0eb9052a1abbb1f0692a48ebfc09f7324de0a476e50afc55ce46c709b9",
-			"license": "GPL-3.0",
+		"contract-fallbackAndReceive.sol": {
+			"keccak256": "0xc72ee36d75782363e09aeb73e99613dd303ac61144798cc42802c39b43788275",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://74baa8ddccc334e9f94e723253bbf58658e79aa6b96cb40ebb5fb4d08a9f22e6",
-				"dweb:/ipfs/QmUzxoadg1YtuDVQfjtKCcpkeYHRQJQzmtPHNoBQkzEZYw"
+				"bzz-raw://6791141cf246ed8ffe7ce2d7dfe54b66b7e6effd919b084acbfa23a3d179cc31",
+				"dweb:/ipfs/QmR9Lud7sSXmuuaLjoPBYukZMaUzwe2r8Bc6Xxh9JUXxGP"
 			]
 		}
 	},

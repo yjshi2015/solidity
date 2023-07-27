@@ -6,10 +6,20 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"name": "readData",
-				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [],
+				"name": "x",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -26,7 +36,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contract-derivedFun.sol": "D"
+			"contract-fallbackAndReceive.sol": "Test"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -40,12 +50,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contract-derivedFun.sol": {
-			"keccak256": "0x4100c54b40d5aee4997dec4319ad78466d8691cea7d8bdf27e77cb55b9bfaefe",
-			"license": "GPL-3.0",
+		"contract-fallbackAndReceive.sol": {
+			"keccak256": "0xc72ee36d75782363e09aeb73e99613dd303ac61144798cc42802c39b43788275",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://839fc705446b1d8dcde64350831424c924586ece62ef5e231489969d8f219cc7",
-				"dweb:/ipfs/QmQo8e69pk7Y1vq9AZRjFoRqbvEidD5NrDVeQbtWdq7iPS"
+				"bzz-raw://6791141cf246ed8ffe7ce2d7dfe54b66b7e6effd919b084acbfa23a3d179cc31",
+				"dweb:/ipfs/QmR9Lud7sSXmuuaLjoPBYukZMaUzwe2r8Bc6Xxh9JUXxGP"
 			]
 		}
 	},

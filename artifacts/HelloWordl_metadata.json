@@ -39,6 +39,31 @@
 			},
 			{
 				"inputs": [],
+				"name": "testReturn",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "index",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							}
+						],
+						"internalType": "struct HelloWordl.Student",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "testType",
 				"outputs": [
 					{
@@ -79,11 +104,11 @@
 	},
 	"sources": {
 		"HelloWorld.sol": {
-			"keccak256": "0xb0f63935597beafc785d3355dd8075c883bb9d7920b9c3b5bcdb7bb3567e21da",
+			"keccak256": "0x5007788069c0739dbf9b829cf81a4f6c3b68d33189b2d6f1a8729971d7d136d4",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://2212d227a3ab56604890ca7e26f8212f196587e6f576bb2645a45079c84ace68",
-				"dweb:/ipfs/QmXRkTuARNKgXMcTryxv3CHzQN4rJqjB3ftaKJJcQCkQtU"
+				"bzz-raw://2ef11340153b1bacbec964d0c57d13674386fb8fe6e00886028c4d675fc6c87b",
+				"dweb:/ipfs/QmdiJz8tao4fSbKd9duKnA926AAe9bGjXr7DCKm4Ndkowg"
 			]
 		}
 	},
