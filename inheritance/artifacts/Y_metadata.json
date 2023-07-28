@@ -6,27 +6,8 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "input",
-						"type": "string"
-					}
-				],
-				"name": "convertToBytes32",
-				"outputs": [
-					{
-						"internalType": "bytes32",
-						"name": "",
-						"type": "bytes32"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
 				"inputs": [],
-				"name": "myString",
+				"name": "bar",
 				"outputs": [
 					{
 						"internalType": "string",
@@ -34,29 +15,17 @@
 						"type": "string"
 					}
 				],
-				"stateMutability": "view",
+				"stateMutability": "pure",
 				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "testReturn",
+				"name": "foo",
 				"outputs": [
 					{
-						"components": [
-							{
-								"internalType": "uint256",
-								"name": "index",
-								"type": "uint256"
-							},
-							{
-								"internalType": "string",
-								"name": "name",
-								"type": "string"
-							}
-						],
-						"internalType": "struct HelloWordl.Student",
+						"internalType": "string",
 						"name": "",
-						"type": "tuple"
+						"type": "string"
 					}
 				],
 				"stateMutability": "pure",
@@ -64,15 +33,28 @@
 			},
 			{
 				"inputs": [],
-				"name": "testType",
+				"name": "x",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "string",
 						"name": "",
-						"type": "uint256"
+						"type": "string"
 					}
 				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "y",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
 				"type": "function"
 			}
 		],
@@ -89,7 +71,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"HelloWorld.sol": "HelloWordl"
+			"inheritance/MultiInheritance.sol": "Y"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -103,12 +85,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"HelloWorld.sol": {
-			"keccak256": "0x380b6c86aea3694fd069cf1891088768ddafab132d9c1ad123b926c93caaf124",
-			"license": "GPL-3.0",
+		"inheritance/MultiInheritance.sol": {
+			"keccak256": "0x6740c2b9928e93d4c32d5b7239763c315935b0a68ce6ca3872480c3821abd097",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://6c2654da5085ead05c68f3f7907ac2900c68c52de4ffc357d87492faabe00813",
-				"dweb:/ipfs/QmSiFGb6Hf4PeACH3QqJoZwauZu1zxvRE5BmLuURn5vnyf"
+				"bzz-raw://8cbb37c55a73dd4e4611fc269df43d90244479fce889fd675e8d8fc20b3a6419",
+				"dweb:/ipfs/QmafewwSU1mwy5jR5VJX68sCeraZgxjr8MtybdpyPHvKS1"
 			]
 		}
 	},

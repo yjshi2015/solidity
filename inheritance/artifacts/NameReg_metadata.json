@@ -1,0 +1,66 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "name",
+						"type": "bytes32"
+					}
+				],
+				"name": "register",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "unregister",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"inheritance/contract-inheritance-demo.sol": "NameReg"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"inheritance/contract-inheritance-demo.sol": {
+			"keccak256": "0xfdb84743ea280d2fdc6fb060e71260939b2d0f2aa34f84a5a51358882b93e3f2",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://65b1818dac5b22deffdf329613804faaa8847f3d2264814fb05d590fd903117c",
+				"dweb:/ipfs/QmTAkCSceVQ1ALzqWB1vGYYqBCdkdh62ti7rvbrHg9qQQr"
+			]
+		}
+	},
+	"version": 1
+}

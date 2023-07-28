@@ -1,0 +1,51 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"inherited-contructor.sol": "DerivedFromDerived"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"inherited-contructor.sol": {
+			"keccak256": "0xf14c652309317234992f523c4cea65bfac3d657d39bd372c905c698d9070f73a",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://e9724da63bb0594f2cdfc851c8f93403161d8efccb541aa5775b89eaf32f6d3d",
+				"dweb:/ipfs/QmfDchXcUDtBcG5XWH6XbXb1vfRXu72HF1DLgV1QUu7Bms"
+			]
+		}
+	},
+	"version": 1
+}

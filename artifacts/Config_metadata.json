@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "lookup",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "adr",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contract-inheritance-demo.sol": "Config"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contract-inheritance-demo.sol": {
+			"keccak256": "0x84e2d1bcd43915a475fa1a3d249464d42a58a72e41c040a9d5d3ec99b3581304",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://c41d488b8b35e9a9af3d6781a26851e57f6ec0eb02d5d5208eaa287cf3cdb890",
+				"dweb:/ipfs/QmRnomUGCyV7ifThFHwfDoJN9v2UG61fUxCsk55vjiECLz"
+			]
+		}
+	},
+	"version": 1
+}

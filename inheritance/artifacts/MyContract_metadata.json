@@ -1,0 +1,66 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "myFunction",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "myVariable",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"inheritance/contract-inheritance.sol": "MyContract"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"inheritance/contract-inheritance.sol": {
+			"keccak256": "0xe565888e119e411f9b0ac769393acc81b37575b354d3fa8d7b4167e0e6f584df",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://366813a8e3324eb27bea1aadda15079904b2ed4da5089d9ac12c9dd22225596b",
+				"dweb:/ipfs/QmPHy5YzfwYDEFZoA3mmuyU3w4nh2A4GtBpvYXUxQFcGZr"
+			]
+		}
+	},
+	"version": 1
+}
