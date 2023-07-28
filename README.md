@@ -118,7 +118,13 @@ solidity learning
   - fallback函数：在0.6.0版本之前为默认的接收以太币的函数，之后细化为receive函数用于接收以太币，fallback则用来处理调用合约中不存在的函数的情况。一个合约
   最多有1个fallback函数。
   - receive函数：用来处理接收以太币的具体你逻辑。
-  - 自定义的payable函数：也可以用来向该合约转账。但是！建议使用receive函数实现接收以太币的功能，这是约定的、标准化的操作！
+  - 自定义的payable函数：也可以用来向该合约转账，如下。但是！建议使用receive函数实现接收以太币的功能，这是约定的、标准化的操作！  
+    ```
+      function setXandSendEhter(address testAddress, uint _x) external payable {
+          //调用TestContract合约的函数时向其转发了指定数量的以太币
+          TestContract(testAddress).setXandReceiveEther{value : msg.value}(_x);
+      }
+    ```
   > Note : ①合约中定义了fallback或（和）receive函数，函数体的内容不需要“显式的声明接收以太币操作”，就可以实现接收以太币的操作，这是由EVM来处理的。②合约A
   中定义了payable修饰的fallback或（和）receive函数，合约B中调用了send或transfer函数向合约A转发以太币，那么EVM会自动触发合约A的receive函数（如果存在的
   话）或fallback函数。也就是说不可以通过直接调用fallback函数或receive函数来实现转账（这2个函数没有入参出参，肯定无法直接转），而是要交给EVM来处理！
@@ -243,7 +249,7 @@ solidity learning
 
 - 函数调用有以下2种方式
   - 合约名调用函数：适用于在合约内部调用自身的函数（继承体系中），或者在合约外部通过合约地址调用函数
-  - 合约实例调用函数：常规的函数调用
+  - 合约实例调用函数：常规的函数调用，具体也可以通过address地址的方式调用
   ```
   contract MyContract {
     uint public myVariable;
