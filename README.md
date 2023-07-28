@@ -15,8 +15,8 @@ solidity learning
     the length to a certain number of bytes, always use one of the value types `bytes1` to `bytes32` because they are much cheaper.
     -  bytes to string : `bytes myBytes; string myString = string(myBytes);`    
   - string
-    - compare two strings by their keccak256-hash using `keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2))` and concatenate 
-    two strings using `string.concat(s1, s2)`
+    - compare two strings by their keccak256-hash using `keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2))` 
+    - concatenate two strings using `string.concat(s1, s2)`
     - string to bytes : `string myString; bytes myBytes = bytes(myString);`
 
   - delete : It is important to note that `delete a` really behaves like an assignment to a, i.e. it stores a new object in a 
@@ -37,6 +37,7 @@ solidity learning
   - `address` payable: Same as `address`, but with the additional members `transfer` and `send`. **you can send Ether to it**
   - Implicit conversions from `address payable` to `address` are allowed, whereas conversions from `address` to `address payable` must be 
   explicit via `payable(<address>)`.
+
 - Members of Addresses
   - balance : query the balance of an address.
   - transfer : send Ether (in units of wei) to a payable address.
@@ -60,6 +61,12 @@ solidity learning
   > All these functions are low-level functions and should be used with care. Specifically, any unknown contract might be malicious and if you 
   call it, you hand over control to that contract which could in turn call back into your contract, so be prepared for changes to your state 
   variables when the call returns. The regular way to interact with other contracts is to call a function on a contract object (x.f()).
+
+- payable修饰符
+  - 修饰address变量，表明该地址可以接收以太币，而不是发送。
+  - 修饰function函数，表明该函数可以接收以太币，并将接收到的以太币存放在合约地址中。
+  > Note : ①以太币转账时，外部调用账户的余额扣除是由EVM自动进行的，不需要手动处理；②以太币的发送涉及到的交易费、矿工费，将从发送者的账户中扣除，即谁发起的
+  转账，扣谁的手续费
   
 - 数据位置：
   - storage：状态变量，存储在链上（类似于数据库持久化）；函数中修改状态变量的值，也会修改链上的值；动态数组只能应用在“状态变量”中；
@@ -102,12 +109,6 @@ solidity learning
   - reference types with location set to storage
   - multi-dimensional arrays (applies only to ABI coder v1)
   - structs (applies only to ABI coder v1). 亲测是可以的，见 @see helloworld.sol
-
-- payable修饰符
-  - 修饰address变量，表明该地址可以接收以太币，而不是发送。
-  - 修饰函数，表明该函数可以接收以太币，并将接收到的以太币存放在合约地址中。
-  > Note : ①以太币转账时，外部调用账户的余额扣除是由EVM自动进行的，不需要手动处理；②以太币的发送涉及到的交易费、矿工费，将从发送者的账户中扣除，即谁发起的
-  转账，扣谁的手续费
 
 - 不可变的变量
   - constant: 用于声明编译时常量；it has to be assigned where the variable is declared；在0.6.0版本之后废弃，推荐使用immutable
@@ -236,6 +237,35 @@ solidity learning
       function myInterfaceFunction() external override returns (string memory) {
           // 实现接口函数的具体逻辑
           return "Hello";
+      }
+  }
+  ```
+
+- 函数调用有以下2种方式
+  - 合约名调用函数：适用于在合约内部调用自身的函数（继承体系中），或者在合约外部通过合约地址调用函数
+  - 合约实例调用函数：常规的函数调用
+  ```
+  contract MyContract {
+    uint public myVariable;
+
+    function myFunction() public {
+        myVariable = 42;
+    }
+  }
+
+  contract CallerContract is MyContract{
+      MyContract public myContract;
+
+      constructor() {
+          myContract = new MyContract();
+      }
+
+      function callFunction() public {
+          // 使用合约名调用函数
+          MyContract.myFunction();
+
+          // 使用合约实例调用函数
+          myContract.myFunction();
       }
   }
   ```

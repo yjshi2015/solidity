@@ -59,6 +59,7 @@ contract Named is Owned, Destructible {
             NameReg(config.lookup(1)).unregister();
             // It is still possible to call a specific
             // overridden function.
+            // 请注意：这里使用的是合约名+函数，这种方式只适用于函数内部调用
             Destructible.destroy();
         }
     }
