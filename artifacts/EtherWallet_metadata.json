@@ -6,33 +6,34 @@
 	"output": {
 		"abi": [
 			{
-				"stateMutability": "payable",
-				"type": "fallback"
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
 			},
 			{
 				"inputs": [],
-				"name": "x",
+				"name": "owner",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "address payable",
 						"name": "",
-						"type": "uint256"
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "y",
-				"outputs": [
+				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -53,7 +54,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contract-fallbackAndReceive.sol": "TestPayable"
+			"EtherWallet.sol": "EtherWallet"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -67,12 +68,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contract-fallbackAndReceive.sol": {
-			"keccak256": "0xc72ee36d75782363e09aeb73e99613dd303ac61144798cc42802c39b43788275",
+		"EtherWallet.sol": {
+			"keccak256": "0x41ff9f1976a79072aa9eb4d71f6191d76c03763858d16742e6398cdbc3dece6e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6791141cf246ed8ffe7ce2d7dfe54b66b7e6effd919b084acbfa23a3d179cc31",
-				"dweb:/ipfs/QmR9Lud7sSXmuuaLjoPBYukZMaUzwe2r8Bc6Xxh9JUXxGP"
+				"bzz-raw://a644f08564841d4dcccd7fe1649d54c9cce5f1394820e64f4d570f83660a476a",
+				"dweb:/ipfs/Qma4dYjVHEj7PXZsi3Nx2EEmRQxwsGAuzFkWS3UxezEDL6"
 			]
 		}
 	},
