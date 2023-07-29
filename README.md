@@ -10,6 +10,28 @@ solidity learning
   - For example, an array of 5 dynamic arrays of `uint` is written as `uint[][5]`. The notation is reversed compared to some other languages. 
   In Solidity, `X[3]` is always an array containing three elements of type `X`, even if `X` is itself an array(即使X本身也是数组，这点非常重要！
   因为它不像其他语言将其视为多维数组). This is not the case in other languages such as C.
+  ```
+  //定义1个长度为2的静态数组
+  uint[2] staticArr = new uint[2];
+  staticArr[0] = 0;
+  staticArr[1] = 1;
+  //如下赋值将编译错误，因为只有2个元素
+  staticArr[2] = 2;
+
+  //定义1个初始长度为2的动态数组
+  uint[] dynamicArr = new uint[](2);
+  dynamic[0] = 0;
+  dynamic[1] = 1;
+  //动态添加第3个元素
+  dynamic.push(2);
+
+  //定义1个长度为2的多维动态数组
+  uint[][2] dynamicMultiArr = new uint[][2];
+  //即有2个动态数组
+  dynamicMultiArr = {[1],[1,2]}
+
+  ```
+
   - bytes
     - As a general rule, use `bytes` for arbitrary-length raw byte data and string for arbitrary-length string (UTF-8) data. If you can limit 
     the length to a certain number of bytes, always use one of the value types `bytes1` to `bytes32` because they are much cheaper.

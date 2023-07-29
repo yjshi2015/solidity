@@ -57,4 +57,43 @@ contract ArrayTest {
 
     }
 
+    //定义1个长度为2的静态数组
+    // uint256[2] memory staticArr = new uint256[2];
+
+    //定义1个初始长度为2的动态数组
+    uint[] dynamicArr = new uint[](2);
+
+    //定义1个长度为2的多维动态数组
+    // uint256[][2] dynamicMultiArr = new uint256[][2];
+    uint[][2] dynamicMultiArr;
+
+    function testArr() public {
+        uint256[2] memory staticArr;
+        staticArr[0] = 0;
+        staticArr[1] = 1;
+        //如下赋值将编译错误：TypeError: Out of bounds array access.因为只有2个元素
+        // staticArr[2] = 2;
+
+        //定义1个初始长度为2的动态数组
+        // uint[] memory dynamicArr = new uint[](2);
+        dynamicArr[0] = 0;
+        dynamicArr[1] = 1;
+        //动态添加第3个元素
+        dynamicArr.push(2);
+
+        //定义1个长度为2的多维动态数组
+        dynamicMultiArr[0].push(1);
+        dynamicMultiArr[1].push(2);
+        dynamicMultiArr[1].push(3);
+
+        //或者用如下方式赋值
+        // dynamicMultiArr[0] = new uint256[](1);
+        // dynamicMultiArr[0][0] = 1;
+        // dynamicMultiArr[1] = new uint256[](2);
+        // dynamicMultiArr[1][0] = 1;
+        // dynamicMultiArr[1][1] = 2;
+
+        //动态多维数组不能直接使用花括号{}一次性赋值。这是因为在Solidity中，动态数组的长度是可变的，而静态数组的长度是固定的。
+        // dynamicMultiArr = {{1}, {1,2}};
+    }
 }
