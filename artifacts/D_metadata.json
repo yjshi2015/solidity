@@ -1,15 +1,32 @@
 {
 	"compiler": {
-		"version": "0.8.21+commit.d9974bed"
+		"version": "0.8.18+commit.87f61d96"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"name": "readData",
-				"outputs": [],
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "a",
+						"type": "uint256"
+					}
+				],
 				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "x",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -26,9 +43,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contract-derivedFun.sol": "D"
+			"contract-createdSalted.sol": "D"
 		},
-		"evmVersion": "shanghai",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -40,12 +57,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contract-derivedFun.sol": {
-			"keccak256": "0x4100c54b40d5aee4997dec4319ad78466d8691cea7d8bdf27e77cb55b9bfaefe",
+		"contract-createdSalted.sol": {
+			"keccak256": "0x5d273266c5fa71e989c78cf9a592e6e5a661e32caba4f48982f354edc443eb4b",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://839fc705446b1d8dcde64350831424c924586ece62ef5e231489969d8f219cc7",
-				"dweb:/ipfs/QmQo8e69pk7Y1vq9AZRjFoRqbvEidD5NrDVeQbtWdq7iPS"
+				"bzz-raw://1d1dfb8b307882710373c7b77539846ef870c124d58a261f03e0b2ae4fa3f923",
+				"dweb:/ipfs/QmbD3ivmjJ2cgXfFNsP5mKhecnQ4RqZZ2ebMEirY6bZw1C"
 			]
 		}
 	},

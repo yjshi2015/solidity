@@ -66,6 +66,13 @@
 			},
 			{
 				"inputs": [],
+				"name": "testArr",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "testPush",
 				"outputs": [
 					{
@@ -132,11 +139,11 @@
 	},
 	"sources": {
 		"contract-arrayTest.sol": {
-			"keccak256": "0x920d45eeb9d1c71d515a85b52a47f26273cd7e0665c59cc965e22ae349b177e9",
+			"keccak256": "0x72a7ec938b9d1429f8650e232ecb11b5f0fab31a53919b8f7f15ffc47e8ca6b2",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://bf50136e28b88fff2ce2a5b9c39907ffd73cdc4d47d475b52a0dbc3c6273c11a",
-				"dweb:/ipfs/QmT4cWawDt1ngKmTt7rr3p4hkhkuAU19fmLPo7AFTKjomH"
+				"bzz-raw://0b600c98362ff8c4bd0cdca92e5255ec43bdf6df0771d1307c9b9c897b179755",
+				"dweb:/ipfs/QmRL491AhtdbBWEML8CaSPqH7Q3J72EMiPxfCq5e6HFY96"
 			]
 		}
 	},
