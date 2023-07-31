@@ -9,11 +9,12 @@ contract Fallback {
 
     event Log(string func, address sender, uint value, bytes data);
 
+    //fallback函数需要data
     fallback() external payable {
         emit Log("fallback", msg.sender, msg.value, msg.data);
     }
 
-
+    //receive函数不需要data
     receive() external payable {
         emit Log("receive", msg.sender, msg.value, "");
     }

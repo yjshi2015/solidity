@@ -7,7 +7,7 @@
 		"abi": [
 			{
 				"inputs": [],
-				"name": "f",
+				"name": "num",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -15,14 +15,20 @@
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "pure",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "minimalScoping",
-				"outputs": [],
-				"stateMutability": "pure",
+				"name": "sender",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -39,7 +45,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contract-variableScope.sol": "C"
+			"cuimianMaster/DelegateCall.sol": "TestContract"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -53,12 +59,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contract-variableScope.sol": {
-			"keccak256": "0x553bec4b53dca1d9736390d989c01b3b4e4cffdd422423955164b72e5ed02489",
-			"license": "GPL-3.0",
+		"cuimianMaster/DelegateCall.sol": {
+			"keccak256": "0x5ed8c6716bfc8351058f3f8b3ce140d6e306f3cb56181eb2275f927ac880a800",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://ab6ef857b654cda74df27b03a9482c259a40b3bbe29fdf0aec42ed35af7b858f",
-				"dweb:/ipfs/QmWJodPkWRGFTAe1CkJY3aDiGzdkTUnCFesw8vp3AN3Uhs"
+				"bzz-raw://a34ab530a06bfdd65fc40cde5d076bb56123c5ff617bcb94014a8023f510f644",
+				"dweb:/ipfs/QmXUqPu2DZ4h3C3v2GFpfo5E1nWaBiVcQH88PerFWFWpEh"
 			]
 		}
 	},

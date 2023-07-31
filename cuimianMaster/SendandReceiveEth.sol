@@ -16,7 +16,7 @@ contract SenderEther {
         require(success, "send failed");
     }
 
-    //会花费所有剩余gas，会返回2个值，bool 和 bytes
+    //会携带所有剩余gas（带上全部家底），会返回2个值，bool 和 bytes
     function sendViaCall(address _to, uint amount) public {
         (bool success, bytes memory datas) =_to.call{value: amount}("");
         require(success, "call failed");
