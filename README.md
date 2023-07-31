@@ -116,19 +116,28 @@ solidity learning
   - internal : 只能合约内部及子合约访问
   - private ：只能合约内部访问，自合约不可访问
 
-- Function Types : `function sig(<parameter types>) {public|internal|external} [pure|view|payable] [returns (<return types>)]`
-  - By default, function types are internal, so the internal keyword can be omitted
-  - external 函数，只能由外部账户调用，也不可以被本合约内部的函数调用
-  - pure 函数中只有局部变量，不会对链上的数据进行任何**读**或**写**操作
-  - view 函数跟pure类似，但是它可以读取 链上的值global value 和 状态值state value,
+- Function Types : `function sig(<parameter types>) {public|internal(default)|external|private} [pure|view|payable] [returns (<return types>)]`
 
 - 函数的可见性
-  - public ： 内外部都可访问
-  - external ： 只能外部访问，不可内部访问
-  - internal
-  - private
+  - public   ： 内外部都可访问，外部访问时发生message call
+  - external ：只能外部访问，不可内部访问，外部访问时发生 transaction call
+  - internal : 内部或子合约调用
+  - private  ：只能该合约可以调用，子合约都不行
 
 - 外部函数：也称为自由函数，可见度为internal
+
+  - 总结：> 变量的可见性是没有external的！假如有一个变量的可见性是external，也就是不能在合约内部可见，那它为什么要定义在这个合约里呢？！但对于函数而言
+  就不一样了，函数既可以有external，又可以有public，都支持外部调用，但两者又有本质不同。调用external函数时，在以太坊网络中进行的是外部交易调用（external
+   transaction），即将函数的调用者和参数打包成一个交易，广播到以太坊网络中执行。而调用public函数时，既可以发生在合约内部，也可以发生在合约外部，当被外
+   部合约调用时，solidity编译器会把参数打包成一个消息，发送到合约地址所在的以太坊网络节点中执行，这可以是任意一个节点，获取函数返回值或修改状态变量。如
+   果发生了状态变更，则会生成新的区块，并将该区块发布到网络中。
+   
+   Note：message call的执行速度比外部交易要快，并且不产生gas费，但message call不支持支付以太币和和external可见性的函数。
+
+- 函数对状态变量的易变性
+  - pure 函数中只有局部变量，不会对链上的数据进行任何**读**或**写**操作
+  - view 函数跟pure类似，但是它可以读取 链上的值global value 和 状态值state value,
+  - payable 接收以太币的函数
 
 - 函数返回值：不能为以下类型
   - mappings
@@ -137,9 +146,10 @@ solidity learning
   - multi-dimensional arrays (applies only to ABI coder v1)
   - structs (applies only to ABI coder v1). 亲测是可以的，见 @see helloworld.sol
 
-- 不可变的变量
-  - constant: 用于声明编译时常量；it has to be assigned where the variable is declared；在0.6.0版本之后废弃，推荐使用immutable
+- 不可变的变量：在编译时就已经确定了，不能再被修改
+  - constant: 用于声明时常量；it has to be assigned where the variable is declared；在0.6.0版本之后废弃，推荐使用immutable
   - immutable: 编译时被硬编码写入到字节码中，并且在运行中不可更改。
+  Note：如果定义了一个常量，要在合约初始化的时候赋值（即构造函数中赋值），只能使用immutable
 
 - 接收以太币的函数
   - fallback函数：在0.6.0版本之前为默认的接收以太币的函数，之后细化为receive函数用于接收以太币，fallback则用来处理调用合约中不存在的函数的情况。一个合约
