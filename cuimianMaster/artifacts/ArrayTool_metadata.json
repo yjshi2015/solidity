@@ -1,0 +1,51 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "DoesNotExist",
+				"type": "error"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"cuimianMaster/Library.sol": "ArrayTool"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"cuimianMaster/Library.sol": {
+			"keccak256": "0xc96837ed8a227828a934e8423edb4e8fbe5d9f57e5954549a57fd89e62777681",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0e41a8f4e280a5df53a78410ff65647b691e7054d0e9803f2ebe02c1618ca357",
+				"dweb:/ipfs/QmXTNc6vqktx6Ms87rSg19mU9VsAwmsvXgddMsNzddw9yb"
+			]
+		}
+	},
+	"version": 1
+}

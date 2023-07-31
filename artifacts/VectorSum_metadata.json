@@ -76,7 +76,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contract-inlineAssembly.sol": "VectorSum"
+			"contract-b05892aaa2.sol": "VectorSum"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -90,12 +90,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contract-inlineAssembly.sol": {
-			"keccak256": "0x4e7e990d71ad820929e219824bf077463ec67ba719e133814829bdf356ff13c3",
+		"contract-b05892aaa2.sol": {
+			"keccak256": "0xa4d476de5283204f542875874593ee741fe8d51d93e35547895a996437936016",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://6e2254f8ec0ae2d6e37895fccba6ac5ff8b33373c73a819d38cae9849fb2efc1",
-				"dweb:/ipfs/QmWyGmopzACJK2x4rbCXJyt5AMoTx6ExHoo2bpGbFstZm6"
+				"bzz-raw://6ff80c16c04913380bbd3e95634b7bd04da539ce19dffacaa396c3f8ceaedcf3",
+				"dweb:/ipfs/QmSUi9ziVsoHiJc81TpBeTh5XxqpN4tqMHWbH1ip5AH4ta"
 			]
 		}
 	},

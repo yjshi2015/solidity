@@ -7,25 +7,23 @@
 		"abi": [
 			{
 				"inputs": [],
-				"name": "num",
-				"outputs": [
+				"name": "DoesNotExist",
+				"type": "error"
+			},
+			{
+				"inputs": [
 					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "sender",
+				"name": "arr",
 				"outputs": [
 					{
-						"internalType": "address",
+						"internalType": "uint256",
 						"name": "",
-						"type": "address"
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -35,18 +33,11 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_num",
+						"name": "_target",
 						"type": "uint256"
 					}
 				],
-				"name": "setVars",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "value",
+				"name": "testFind",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -71,7 +62,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"cuimianMaster/DelegateCall.sol": "TestContract"
+			"cuimianMaster/Library.sol": "TestArray"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -85,12 +76,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"cuimianMaster/DelegateCall.sol": {
-			"keccak256": "0x36b820250f978a0e1a0b01debef67abcf97f65ec43b9a7671a2ca4202de08a34",
+		"cuimianMaster/Library.sol": {
+			"keccak256": "0xc96837ed8a227828a934e8423edb4e8fbe5d9f57e5954549a57fd89e62777681",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ccd314d5fe06a7759a0450038207e9fb51a73a2c0e06b4b85b7fb731ced0346f",
-				"dweb:/ipfs/QmdZJgwVJ15NcoKFC2GTWLBUJzHuFLzwpWkuPMbik23Vf7"
+				"bzz-raw://0e41a8f4e280a5df53a78410ff65647b691e7054d0e9803f2ebe02c1618ca357",
+				"dweb:/ipfs/QmXTNc6vqktx6Ms87rSg19mU9VsAwmsvXgddMsNzddw9yb"
 			]
 		}
 	},

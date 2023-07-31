@@ -6,24 +6,17 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"name": "num",
-				"outputs": [
+				"inputs": [
 					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "sender",
+				"name": "accounts",
 				"outputs": [
 					{
-						"internalType": "address",
+						"internalType": "contract Account",
 						"name": "",
 						"type": "address"
 					}
@@ -34,27 +27,14 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "_num",
-						"type": "uint256"
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
 					}
 				],
-				"name": "setVars",
+				"name": "createAccount",
 				"outputs": [],
 				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "value",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -71,7 +51,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"cuimianMaster/DelegateCall.sol": "TestContract"
+			"cuimianMaster/NewContract.sol": "AccountFactory"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -85,12 +65,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"cuimianMaster/DelegateCall.sol": {
-			"keccak256": "0x36b820250f978a0e1a0b01debef67abcf97f65ec43b9a7671a2ca4202de08a34",
+		"cuimianMaster/NewContract.sol": {
+			"keccak256": "0xb717dd09f56b47c7c04d446b7dea2b7dc41108413a47237bbd29ef6c9e178652",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ccd314d5fe06a7759a0450038207e9fb51a73a2c0e06b4b85b7fb731ced0346f",
-				"dweb:/ipfs/QmdZJgwVJ15NcoKFC2GTWLBUJzHuFLzwpWkuPMbik23Vf7"
+				"bzz-raw://f6c1b095b95184bd1667a7138ba0aa945d473c262deac0282fcdee0989bbe6f3",
+				"dweb:/ipfs/QmXfwdFyH8dwrLrB2jZvuFj1Ve2gn3hTjC1z7BhSaxCQmR"
 			]
 		}
 	},

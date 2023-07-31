@@ -1,0 +1,94 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_message",
+						"type": "string"
+					}
+				],
+				"name": "getMessageHash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_signer",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_message",
+						"type": "string"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_sig",
+						"type": "bytes"
+					}
+				],
+				"name": "verify",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"cuimianMaster/Sig.sol": "VerifySig"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"cuimianMaster/Sig.sol": {
+			"keccak256": "0x9ef9daf57c26d7d542ca31910baa902dd95e56802341782a63bc0e78e4214f9e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://98caef966b08e48a539b9ecf5977e86016f89597c64a96eab42d67da5ed8985f",
+				"dweb:/ipfs/QmP55iuEHreN1aRjBcqsKTbr9HQM7UhiPVF3ZH1VrVMnvU"
+			]
+		}
+	},
+	"version": 1
+}
