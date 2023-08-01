@@ -3,6 +3,10 @@ pragma solidity ^0.8.7;
 
 //合约的继承
 contract Parent {
+    mapping (uint => bool) public testMap;
+    constructor () {
+        testMap[666] = true;
+    }
     function f(uint a) public pure virtual returns (uint val) {
         val = a;
     }
