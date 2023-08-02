@@ -165,6 +165,7 @@ contract ERC721 is IERC721 {
         address to,
         uint tokenId
     ) private {
+        //即必须NFT的所有者来举行拍卖！！！其他人不行
         require(from == owner, "not owner");
         require(to != address(0), "transfer to the zero address");
 

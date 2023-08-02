@@ -3,6 +3,13 @@ pragma solidity ^0.8.0;
 
 /*
 ERC721为NFT的创建、交易和所有权转移提供了标准
+
+拍卖流程
+1、Remix账户A deploy NFT合约
+2、Remix账户A 调用 NFT合约 mint方法，给账户B铸造NFT
+3、Remix账户B deploy 拍卖合约，constructor方法传入 NFT合约地址 和 NFTID（谁的NFT谁来拍卖）
+4、Remix账户B 调用 NFT合约 approve 方法，允许 拍卖合约 拍卖NFTID（谁的NFT谁来授权）
+5、Remix账户C 调用 拍卖合约 Buy 方法买入 NFTID
 */
 interface IERC721 {
     function transferFrom(address _from, address _to, uint _nftId) external ;
@@ -21,6 +28,10 @@ contract DutchAuction {
     uint public immutable expiresAt;
     uint public immutable discountRate;
 
+    /*
+    _nft：NFT合约的部署（实例）地址
+    _nft: NFT的编号
+    */
     constructor(uint _startingPrice, uint _discountRate, address _nft, uint _nftId) {
         seller = payable(msg.sender);
         startingPrice = _startingPrice;
