@@ -68,7 +68,7 @@ contract ERC20 is IERC20 {
     }
 
     //铸币
-    function mint(uint amount) external onlyOwner(msg.sender){
+    function mint(uint amount) external /*onlyOwner(msg.sender)谁想要就给谁*/{
         balanceOf[msg.sender] += amount;
         totalSupply += amount;
         emit Transfer(address(0), msg.sender, amount);
