@@ -65,12 +65,14 @@ contract ERC721 is IERC721 {
         bool approved
     );
 
+    //这个地址是账户的地址
     // Mapping from token ID to owner address
     mapping(uint => address) private _owners;
 
     // Mapping owner address to token count
     mapping(address => uint) private _balances;
 
+    //谁可以拍卖，这个地址是拍卖合约的地址
     // Mapping from token ID to approved address
     mapping(uint => address) private _tokenApprovals;
 
@@ -129,22 +131,31 @@ contract ERC721 is IERC721 {
         emit Approval(owner, to, tokenId);
     }
 
+    //把该NFT授权给拍卖合约的部署（实例）地址，也就是说让拍卖合约有该NFT的控制权，才可以对它
+    //进行拍卖
     function approve(address to, uint tokenId) external override {
         address owner = _owners[tokenId];
         require(
+            //前提条件：必须是NFT的owner发起授权，或者该属于该owner授权过的拍卖者之一
             msg.sender == owner || _operatorApprovals[owner][msg.sender],
             "not owner nor approved for all"
         );
         _approve(owner, to, tokenId);
     }
 
+    /*
+    spender：该NFT的拍卖者
+    */
     function _isApprovedOrOwner(
         address owner,
         address spender,
         uint tokenId
     ) private view returns (bool) {
+        //该NFT所有者为拍卖者
         return (spender == owner ||
+           //该NFT的拍卖者不是owner，指定了某人spender
             _tokenApprovals[tokenId] == spender ||
+            //该NFT拍卖者spender的拍卖权限，可true可false
             _operatorApprovals[owner][spender]);
     }
 
@@ -231,7 +242,7 @@ contract ERC721 is IERC721 {
         safeTransferFrom(from, to, tokenId, "");
     }
 
-    //把该NFT分配给to
+    //铸造一个NFT，并将该NFT分配给to（一个普通的账户地址，可以是remix的账户地址）
     function mint(address to, uint tokenId) external {
         require(to != address(0), "mint to zero address");
         require(_owners[tokenId] == address(0), "token already minted");
