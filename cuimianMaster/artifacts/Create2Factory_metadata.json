@@ -6,11 +6,17 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"name": "f",
-				"outputs": [],
-				"stateMutability": "pure",
-				"type": "function"
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "Deploy",
+				"type": "event"
 			}
 		],
 		"devdoc": {
@@ -26,7 +32,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contract-libraries.sol": "C"
+			"cuimianMaster/Create2.sol": "Create2Factory"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -40,12 +46,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contract-libraries.sol": {
-			"keccak256": "0x1b4a8e02c97c73ade3f93559a6f76df17b691999afe8c175746138d7c5274419",
-			"license": "GPL-3.0",
+		"cuimianMaster/Create2.sol": {
+			"keccak256": "0x9db2a8dfbd8357ea4230155ac8e5fea01dba385a0a40716f3daa1198dd462a86",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://12b30494c2c2fd705518efe36cab76382fa8086589c8572b50c840eca2ef50fe",
-				"dweb:/ipfs/QmbyHHf2tZJ9n7DkimkJ6q8jqaBRcKUufNqZgmJY6YTYyL"
+				"bzz-raw://558442f992b60dfcf27b31a67aca3ea0c7983df8352b5941037e2d96828b77e1",
+				"dweb:/ipfs/QmTJyiZhyp7rsTio3mNsWBBGzWYTYskG3GuTut8mVRschZ"
 			]
 		}
 	},

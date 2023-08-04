@@ -4,15 +4,7 @@
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [
-			{
-				"inputs": [],
-				"name": "f",
-				"outputs": [],
-				"stateMutability": "pure",
-				"type": "function"
-			}
-		],
+		"abi": [],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -26,7 +18,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contract-libraries.sol": "C"
+			"cuimianMaster/ERC20.sol": "E"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -40,12 +32,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contract-libraries.sol": {
-			"keccak256": "0x1b4a8e02c97c73ade3f93559a6f76df17b691999afe8c175746138d7c5274419",
-			"license": "GPL-3.0",
+		"cuimianMaster/ERC20.sol": {
+			"keccak256": "0x7fbb191809dbb4a6a12d70c341d2a721b2b603f3bb72ef799074761b4c18dff1",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://12b30494c2c2fd705518efe36cab76382fa8086589c8572b50c840eca2ef50fe",
-				"dweb:/ipfs/QmbyHHf2tZJ9n7DkimkJ6q8jqaBRcKUufNqZgmJY6YTYyL"
+				"bzz-raw://17b41457ef883c23179cc194624b3c0fd07bb0e419cc64ddc4cca5da8fa6de4f",
+				"dweb:/ipfs/QmVKWkNP2D6E12mVP3fzX14feDy2AdzizQj6EktCxkPLLT"
 			]
 		}
 	},

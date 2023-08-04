@@ -4,15 +4,7 @@
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [
-			{
-				"inputs": [],
-				"name": "f",
-				"outputs": [],
-				"stateMutability": "pure",
-				"type": "function"
-			}
-		],
+		"abi": [],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -26,7 +18,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contract-libraries.sol": "C"
+			"cuimianMaster/DutchAuction.sol": "IERC7"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -40,12 +32,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contract-libraries.sol": {
-			"keccak256": "0x1b4a8e02c97c73ade3f93559a6f76df17b691999afe8c175746138d7c5274419",
-			"license": "GPL-3.0",
+		"cuimianMaster/DutchAuction.sol": {
+			"keccak256": "0x5dd498943c131d6598761ad329d7b7908f56c73126191cc10c9690a0177a731b",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://12b30494c2c2fd705518efe36cab76382fa8086589c8572b50c840eca2ef50fe",
-				"dweb:/ipfs/QmbyHHf2tZJ9n7DkimkJ6q8jqaBRcKUufNqZgmJY6YTYyL"
+				"bzz-raw://05eaeb9dcd60c5d0e59b4b8bc1e14290fdc205aa00784c78e70a94510345132f",
+				"dweb:/ipfs/QmP3o1y5Rwaz8Cz22NafvXeWDNCtnEub7kTrkdrewsm1A3"
 			]
 		}
 	},
