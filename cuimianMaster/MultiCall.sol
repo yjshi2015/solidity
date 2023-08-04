@@ -1,15 +1,23 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+
 /*
-期望以下2个函数的调用发生在1个区块上，但实际中可能不会如此
+
 */
 contract TestMultiCall {
-    function func1(uint a) external view returns (uint, uint) {
+    event Log(address caller, string func);
+
+    uint public initValue;
+
+    function func1(uint a) external returns (uint, uint) {
+        // emit Log();
+        initValue = a;
         return (a, block.timestamp);
     }
 
-    function func2(uint b) external view returns (uint, uint) {
+    function func2(uint b) external returns (uint, uint) {
+        emit Log(msg.sender, "func2");
         return (b, block.timestamp);
     }
 
@@ -19,16 +27,18 @@ contract TestMultiCall {
     }
 
     function getData2() external pure returns (bytes memory) {
-        return abi.encodeWithSignature("func1(uint256)", 2);
+        return abi.encodeWithSignature("func2(uint256)", 2);
         // return abi.encodeWithSelector(this.func2.selector, 2);
     }
 }
 
 contract MultiCall {
+    event Log(address caller, string func);
     /*
     targets:目标合约的地址
     datas: 调用目标合约的函数及参数信息
 
+    multicall多重调用，是为了组合更复杂的合约函数
     */
     function multiCall(address[] calldata targets, bytes[] calldata datas)
         external 
@@ -46,5 +56,21 @@ contract MultiCall {
         }
 
         return results;
+    }
+
+
+    //普通的call调用，可以修改被调用合约的状态
+    function commonCallFun(address target) external returns(bytes memory) {
+        (bool success, bytes memory result) = target.call(abi.encodeWithSignature("func2(uint256)", 2));
+        require(success);
+        return result;
+    }
+
+    //staticcall调用，不能修改被调用合约的状态，否则会发生未知错误；同时，由于未修改状态所以在被调用的合约
+    //中，不能使用emit方法
+    function staticCallFun(address target) external view returns (bytes memory) {
+        (bool success, bytes memory result) = target.staticcall(abi.encodeWithSignature("func1(uint256)", 1));
+        require(success);
+        return result;
     }
 }
