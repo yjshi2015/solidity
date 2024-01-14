@@ -1,11 +1,6 @@
 # solidity
 solidity learning
 
-## 待了解
-- ABI
-- low code
-
-
 ## types
 - The concept of “undefined” or “null” values does not exist in Solidity, but newly declared variables always have a default value dependent
   on its type

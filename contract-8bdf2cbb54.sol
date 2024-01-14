@@ -4,7 +4,7 @@ pragma solidity ^0.8.8;
 // Represent a 18 decimal, 256 bit wide fixed point type using a user-defined value type.
 type UFixed256x18 is uint256;
 
-/// A minimal library to do fixed point operations on UFixed256x18.
+/// A minimal library to do fixed point operations on UFixed256x18.哈哈
 library FixedMath {
     uint constant multiplier = 10**18;
 
